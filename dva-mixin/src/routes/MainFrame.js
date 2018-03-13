@@ -122,6 +122,15 @@ class MainFrame extends Component {
               demo2
             </span>),
           afterClick: this.refreshChildKey,
+        },{
+          link: '/xuchao',
+          title: '徐超',
+          dom: (
+            <span>
+            
+              老杨
+            </span>),
+          afterClick: this.refreshChildKey,
         }],
       }];
     

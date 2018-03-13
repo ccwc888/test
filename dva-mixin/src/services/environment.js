@@ -4,7 +4,7 @@ import { getData } from './request';
  * 获取websocket地址
  */
 export async function getWebSocketOption() {
-  const data = await getData('environment', 'getWebSocketOption', {}, '1.0');
+  const data = await getData('environment', 'getWebSocketOption', {});
   return data;
 }
 /**

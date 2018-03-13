@@ -38,7 +38,7 @@ app.model(require('./models/vMainFrame'));
 // demo1
 app.model(require('./models/demo1'));
 app.model(require('./models/demo2'));
-
+app.model(require('./models/xuchao'))
 // 4. Router
 // 开发使用router
 app.router(require('./router'));

@@ -11,6 +11,8 @@ import Demo1 from '@routes/demo1';
 
 import Demo2 from '@routes/demo2';
 
+import xuchao from '@routes/xuchao/xuchao.js';
+
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
@@ -20,6 +22,7 @@ function RouterConfig({ history }) {
         <Route path="component_dev" component={componentDev} />
         <Route path="demo1" component={Demo1} />
         <Route path="demo2" component={Demo2} />
+        <Route path="xuchao" component={xuchao} />
       </Route>
     </Router>
   );
