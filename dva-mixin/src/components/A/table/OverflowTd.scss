@@ -1,0 +1,52 @@
+.wrap {
+  // 需要在 td 上 position relative
+  position: absolute;
+  // 根据行高调整位置。
+  // edge 下在不能取到正确的百分比值，devtool 中触发 reflow 后又是正常的...
+  // top: calc(50% - 0.6em);
+  // left 和 width 需要处理 td 的 padding
+  left: 10px;
+
+  width: calc(100% - 20px);
+
+  // 重置行高为 1.2，不设置为 1 是为了防止 overflow 裁剪掉一些字
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  top: 0;
+  height: 100%;
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+:global(.ie){
+  .wrap{
+    height: 40px;
+  }
+}
+:global(.edge), :global(.ie){
+  .wrap{
+    span{
+      display: inline;
+    }
+  }
+}
+
+:global {
+  .ant-table-tbody > tr > td {
+    &.overflowtd {
+      position: relative;
+    }
+  }
+}

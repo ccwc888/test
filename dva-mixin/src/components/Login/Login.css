@@ -1,0 +1,106 @@
+.normal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  min-height: 625px;
+  min-width: 1250px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.header {
+  height: 40px;
+  background-color: #ebebeb;
+}
+.footer {
+  height: 90px;
+  text-align: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #7d7d7d;
+  background-color: #ebebeb;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  min-height: 495px;
+  min-width: 1250px;
+}
+.login_middle_img {
+  width: 820px;
+  height: 495px;
+  background: url(./img/login.png) no-repeat 0 -1138px;
+}
+/*中间右侧登录区域*/
+.login_middle_content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+  height: 495px;
+}
+/*中间右侧登录区域 ——> 顶部内容*/
+.top_content {
+  height: 210px;
+  text-align: center;
+  font-size: 0;
+}
+.title {
+    margin-top: 40px;
+    font-size: 24px;
+    color: #333;
+}
+.mask {
+  position: absolute;
+  width: 15px;
+  height: 495px;
+  top: 0;
+  bottom: 0;
+}
+.mask_left {
+  left: -15px;
+  background: url(./img/login.png) no-repeat 0 -148px;
+}
+.mask_right {
+  right: -15px;
+  background: url(./img/login.png) no-repeat 0 -643px;
+}
+.logo {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 9px;
+  width: 100px;
+  height: 100px;
+  background: url(./img/login.png) no-repeat 0 -48px;
+}
+.error_tip {
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  color: #F00;
+  font-family: SimHei;
+}
+.download {
+  text-align: center;
+  color: #666;
+  margin-left: 10px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  font-family: SimHei;
+}
+.download > a {
+  text-align: center;
+  color: #666;
+  margin-left: 10px;
+}
+.download > a:hover{
+  color: #1188cc;
+  text-decoration: none;
+}

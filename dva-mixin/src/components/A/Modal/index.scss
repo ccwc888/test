@@ -1,0 +1,77 @@
+.modalComponent{
+  text-align: center;
+  white-space: nowrap;
+  &:before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
+  }
+  // display: flex;
+  // justify-content: center;
+  // align-items:center;
+ :global{
+   .ant-modal{
+    padding-bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
+    top: 0;
+    text-align: left;
+   }
+   .ant-modal-header{
+      height: 50px;
+      line-height: 50px;
+      padding: 0 10px 0 20px;
+      background: #f2f2f2;
+      border-bottom: 1px solid #e5e5e5;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+   }
+   .ant-modal-content{
+     border-radius: 3px;
+   }
+   .ant-modal-title{
+      height: 50px;
+      line-height: 50px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+   }
+   .ant-modal-footer{
+     border-top: 1px solid #eee;
+     margin: 0 20px;
+     height: 60px;
+     padding: 14px 0;
+   }
+   .ant-btn-lg{
+     float: right;
+     margin-left: 10px;
+   }
+   .ant-modal-body{
+    font-size: 14px;
+    padding: 0;
+    line-height: inherit;
+   }
+   .ant-modal-close-x{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    margin: 10px 10px 0 0;
+    color: #888;
+    font-weight: 100;
+    &:hover{
+      color: #333;
+    }
+    &:active{
+      color: #666;
+    }
+   }
+ }
+ .selfBtnContainer{
+    &>span{
+      margin-left: 10px;
+    }
+ }
+}

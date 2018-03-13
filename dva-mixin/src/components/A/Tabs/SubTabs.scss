@@ -1,0 +1,48 @@
+$default-color: #e5e5e5;
+$backgroundColor: #f5f5f5;
+
+.subTabs{
+  margin-top: 25px;
+  margin-bottom: 30px;
+  :global(.ant-radio-group){
+    font-size: 12px;
+    :global(.ant-radio-button-wrapper){
+      height: 32px;
+      line-height: 30px;
+      border-color: $default-color;
+      min-width: 100px;
+      text-align: center;
+      &:first-child{
+        border-left-color:$default-color;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+      }
+      &:last-child{
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+      }
+      &:not(:first-child)::before{
+        background-color: $default-color;
+      }
+      &:hover,&-focused{
+        color: #666;
+        background: $backgroundColor;
+      }
+      &-checked{
+        color: #333;
+        box-shadow: none;
+        background: $backgroundColor;
+        &::before{
+          background-color: $default-color !important;
+        }
+        &:hover,&-focused{
+          color: #333;
+        }
+      }
+      &-disabled, &-disabled:hover{
+        background: none;
+        color: #ccc;
+      }
+    }
+  }
+}

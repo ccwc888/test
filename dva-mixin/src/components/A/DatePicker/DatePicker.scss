@@ -1,0 +1,15 @@
+.DatePicker{
+  display: inline-block;
+  :global(.ant-calendar-picker){
+    min-width: 180px;
+    :global(.ant-input){
+      padding: 4px 10px;
+      // border-color: #e5e5e5;
+    }
+    :hover{
+      :global(.ant-calendar-picker-input:not([disabled])){
+        border-color: #999;   
+      }
+    } 
+  }
+}

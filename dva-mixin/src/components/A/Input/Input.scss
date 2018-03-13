@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+$input-placeholder-color: #cccccc !default;
+$input-color: #333333 !default;
+$input-border-color: #e5e5e5 !default;
+$input-hover-border-color: #999999 !default;
+$input-height-base: 32px !default;
+$input-padding-horizontal: 9px !default;
+$input-padding-vertical-base: 4px !default;
+$input-disabled-bg: #f5f5f5 !default;
+
+:global{
+    input.ant-input[data-cinputstyle]{
+        border-radius: 2px;
+        min-width: 180px;
+        &:focus{
+            border-color: $input-hover-border-color;
+            outline: 0;
+            box-shadow: none;
+        }
+    }
+    .has-error{
+        input.ant-input[data-cinputstyle]:focus{
+            border-color: $input-error-color;
+        }
+    }
+}

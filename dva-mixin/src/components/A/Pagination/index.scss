@@ -1,0 +1,52 @@
+.container {
+    margin: 0 20px;
+    padding: 14px 0px;
+    height: 60px;
+    // line-height: 60px;
+    // vertical-align: middle;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  .button {
+    height: 32px;
+    width: 32px;
+    vertical-align: top;
+    margin-right: 10px;
+    display: inline-block;
+    button {
+      height: 32px;
+      min-width: 32px;
+      i:before{
+        padding-left: 6px;
+      }
+    }
+    :global(.ant-btn){
+      &[disabled],&[disabled]:hover{
+          background-color:#f5f5f5 !important;
+      }
+    }
+  }
+  .element {
+    margin-right: 10px;
+    // vertical-align: middle;
+  }
+  .jumpButton {
+    vertical-align: top;
+    margin: 0 0 0 20px;
+    button {
+      height: 32px;
+      min-width: 80px;
+    }
+    :global(.ant-btn){
+      &[disabled],&[disabled]:hover{
+          background-color:#f5f5f5 !important;
+      }
+    }
+  }
+}
+.split {
+  border: solid;
+  border-color: #e5e5e5;
+  border-width: 1px 0 0 0;
+}

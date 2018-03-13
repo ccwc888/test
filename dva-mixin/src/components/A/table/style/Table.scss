@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+$th-font-color: #999999;
+$td-font-color: #666666;
+$th-bg-color: #f7f8f8;
+$inner-table-bg-color: #f8f8f7;
+$th-line-color: #eeeeee;
+$tr-hover-bg-color: #e5e5e5;
+$disabled-font-color: #cccccc;
+
+@function turnToPx($n){
+    @return #{($n * 10)}px;
+}
+
+
+.wrapper{
+    &.zebra-stripe{
+        table{
+            tbody tr:nth-child(even){
+                background-color: $th-bg-color;
+            }
+        }
+    }
+
+    &.no-border{
+        :global{
+            table{
+                tr th{
+                    border-top:1px solid $th-line-color;
+                }
+                tr th:not(.ant-table-expand-icon-th) ~ th{
+                    &:before{
+                        position: absolute;
+                        content: '';
+                        left: 0;
+                        top: calc(50% - 1px);
+                        transform: translateY(-50%);
+                        height: turnToPx(1);
+                        width: 1px;
+                        background: $th-font-color;
+                    }
+                }
+                tr td{
+                    border-bottom:none;
+                }
+            }
+        }
+    }
+
+    :global{
+        table{
+            border-bottom:1px solid $th-line-color;
+            tr th{
+                position: relative;
+                background-color: $th-bg-color;
+                line-height: 1.1;
+                border-bottom:1px solid $th-line-color;
+                color: $th-font-color;
+                font-size: turnToPx(1.4);
+            }
+
+            tr td{
+                color: $td-font-color;
+                font-size: turnToPx(1.4);
+                line-height: 1.1;
+            }
+        }
+        // 非全选状态的全选按钮无需有特殊样式
+        .ant-checkbox-wrapper .ant-checkbox-indeterminate .ant-checkbox-inner{
+            background-color: #fff;
+            border-color: #d9d9d9;
+          }
+        .ant-table-thead > tr > th{
+            padding: turnToPx(1.1) turnToPx(1);
+        }
+        .ant-table-tbody > tr > td{
+            padding: turnToPx(1.2) turnToPx(1);
+        }
+        .ant-checkbox{
+            top: -1px;
+        }
+        .ant-table-thead > tr > th.ant-table-selection-column, .ant-table-tbody > tr > td.ant-table-selection-column{
+            min-width: 40px;
+            width: 40px;
+        }
+
+        .ant-table-thead > tr.ant-table-row-hover > td, .ant-table-tbody > tr.ant-table-row-hover > td, .ant-table-thead > tr:hover > td, .ant-table-tbody > tr:hover > td{
+            background: $tr-hover-bg-color;
+        }
+        .disabled-tr td{
+            color: $disabled-font-color;
+        }
+        .components-table-nested{
+            table{
+                border-bottom:none;
+                tbody tr{
+                    background-color: #fff;
+                }
+                tr td{
+                    border-bottom: 1px solid $th-line-color;
+                    color: $td-font-color;
+                    font-size: turnToPx(1.4);
+                    line-height: 1.1;
+                }
+            }
+            .disabled-tr td{
+                color: $disabled-font-color;
+            }
+            .ant-table-thead > tr > th{
+                padding: turnToPx(1.6) turnToPx(1);
+            }
+            .ant-table-tbody > tr > td{
+                padding: turnToPx(1.7) turnToPx(1);
+            }
+            .ant-table-expand-icon-th, .ant-table-row-expand-icon-cell{
+                display: none;
+            }
+            tr.ant-table-expanded-row > td{
+                padding: 0;
+                background-color: $inner-table-bg-color;
+            }
+        }
+        .nested-inner-table{
+            table{
+                border-bottom:none;
+                tbody tr{
+                    background-color: $inner-table-bg-color;
+                }
+            }
+            .disabled-tr td{
+                color: $disabled-font-color;
+            }
+            .ant-table-thead > tr > th{
+                border-top: none;
+                padding: turnToPx(1) turnToPx(1);
+            }
+            .ant-table-tbody > tr > td{
+                padding: turnToPx(1.1) turnToPx(1);
+            }
+            .ant-table-tbody > tr:last-child > td{
+                border-bottom: none;
+            }
+        }
+        // .ant-table-bordered .ant-table-thead > tr > th{
+        //     border-top: 0;
+        //     &:not(:last-child){
+        //         border-right: 0;
+        //     }
+        // }
+    }
+}
+
+:global{
+    :root .ant-table-column-sorter .anticon-caret-up, :root .ant-table-column-sorter .anticon-caret-down{
+        font-size: turnToPx(0.8);
+    }
+}
+
+:global {
+  .ant-table-thead > tr > th.ant-table-column-sort {
+    background-color: #f7f8f8;
+  }
+}

@@ -1,0 +1,44 @@
+$globalThemeColor: $primary-color;
+
+.ant-notification  {
+  margin-right: 80px;
+  .ant-notification-notice {
+    padding: 0px;
+    box-shadow: 0 0 2px 2px #eee;
+    background-color: #fcf3dc;
+    .ant-notification-notice-content {
+      .ant-notification-notice-message {
+        position: relative;
+        padding-left: 33px;
+        line-height: 40px;
+        background-color: #fff;
+        color: $globalThemeColor;
+
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 33px;
+            height: 100%;
+            margin: auto 0;
+            background-color: #ddd;
+            background: url('/imgs/repair_task/fa-red-ringing.png') no-repeat center center;
+        }
+      }
+      .ant-notification-notice-description {
+        min-height: 96px;
+        padding-left: 10px;
+        line-height: 24px;
+        color: #6c4e05;
+      }
+
+      .ant-notification-notice-btn {
+        padding-bottom: 5px;
+        margin: 0 17px 0 0px;
+        color: #6c4e05;
+      }
+    }
+  }
+}

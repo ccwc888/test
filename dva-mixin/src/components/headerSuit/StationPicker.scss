@@ -1,0 +1,113 @@
+@import '../../globalVar.scss';
+
+.normal {
+  line-height: 26px;
+  :global(.ant-btn){
+    border: none;
+  }
+  :global(.fa){
+    margin-right: 5px;
+    color: #333;
+  }
+  button{
+    color: $globalThemeColor;
+  }
+}
+
+.popContainer{
+  /* 容器调整 */
+  :global(.ant-popover-arrow:after) {
+    border-bottom-color: #f1f4f8 !important;
+  }
+
+  :global(.ant-popover-inner) {
+    background-color: #f1f4f8;
+    // background-color: transparent;
+  }
+
+  :global(.ant-popover-inner-content) {
+    // padding: 10px 0 0 0;
+    padding: 0;
+    width: 640px;
+    height: 350px;
+  }
+
+  /* 搜索框 */
+  :global(.ant-input-preSuffix-wrapper){
+    position: absolute;
+    width: 200px;
+    right: 0;
+  }
+
+  /* 标签页 */
+  .tabContainer{
+    background: #fff;
+  }
+  // :global(.ant-tabs-bar),
+  :global(.ant-tabs){
+    border-bottom: 1px solid #d9d9d9;
+  }
+  :global(.ant-tabs-bar){
+    background-color: #f1f4f8;
+  }
+  :global(.ant-tabs-nav){
+    margin-left: 10px;
+  }
+  :global(.ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab){
+    margin-right: -1px;
+    font-size: 14px;
+  }
+  :global(.ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-nav-container){
+    height: auto;
+  }
+  :global(.ant-tabs-tab){
+    // padding: 0 10px 5px !important;
+    line-height: 25px;
+    // height: 35px;
+  }
+  :global(.ant-tabs-bar){
+    margin-bottom: 0;
+  }
+  :global(.ant-tabs-tabpane){
+    height: 230px;
+    background-color: #fff;
+    padding: 10px 6px;
+    transition: none !important;
+    overflow: auto;
+  }
+  .colStation{
+    // text-align: center;
+    padding: 0 10px;
+    line-height: 32px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .stationLink{
+    cursor: pointer;
+  }
+
+  .popContent{
+    height: 100%;
+    padding-top: 10px;
+    :global{
+      .ant-input-affix-wrapper{
+        position: absolute;
+        width: 200px;
+        height: 28px;
+        right: 10px;
+        top: 16px;
+        >input{
+          border-radius: 40px;
+        }
+      }
+    }
+  }
+
+  :global {
+    .ant-tabs-tab:hover {
+      color: #febd70;
+    }
+  }
+}

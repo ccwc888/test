@@ -1,0 +1,116 @@
+@function getImgUrl($imgName) {
+    @return url(./img/#{$imgName});
+}
+@import '../../globalVar.scss';
+.normal {
+    .navIcon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 14px;
+        width: 18px;
+        height: 18px;
+        margin: auto 0;
+        transition: left .3s;
+    }
+    .iconCircle:before {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        // font-style: normal;
+        vertical-align: baseline;
+        // text-align: center;
+        // text-transform: none;
+        line-height: 1;
+        // text-rendering: optimizeLegibility;
+        // -webkit-font-smoothing: antialiased;
+    }
+    .jcgl {
+        background: getImgUrl('icon_2.png');
+    }
+    .qygk {
+        background: getImgUrl('icon_3.png');
+    }
+    :global(.ant-menu-item-group-title) {
+        white-space: nowrap;
+    }
+    :global(.ant-menu-item),
+    :global(.ant-menu-submenu-title) {
+        padding-left: 40px !important;
+
+    }
+
+
+    :global(.ant-menu-item-selected){
+      background-color: #1c1c1c !important;
+      // ribbon
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background-color: $globalThemeColor;
+      }
+
+      .iconCircle:before{
+        // border-color: #fff;
+        background-color: #fff;
+      }
+    }
+
+    :global(.ant-menu-dark){
+      background-color: #272727;
+      :global(.ant-menu-inline.ant-menu-sub){
+        background-color: #272727;
+      }
+    }
+
+    :global(.ant-menu-submenu-title){
+      font-size: 14px !important;
+      font-weight: bold;
+      color: #fff;
+      height: 50px !important;
+      line-height: 50px !important;
+    }
+
+    :global(.ant-menu-item), :global(.ant-menu-sub.ant-menu-inline > .ant-menu-item){
+      height: 36px;
+      line-height: 36px;
+      font-size: 14px;
+    }
+}
+
+:global(.ant-layout-sider-collapsed) {
+    .normal{
+      .navIcon {
+        left: 11px;
+      }
+      .nav_text {
+          display: none;
+      }
+      :global(.ant-menu-item-group-title) {
+          // font-size: 0;
+          opacity: 0;
+      }
+      :global(.ant-menu-submenu-title) {
+          >span>span {
+              display: none;
+          }
+          &:after {
+              content: '';
+          }
+      }
+    }
+}

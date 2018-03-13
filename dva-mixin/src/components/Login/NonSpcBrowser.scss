@@ -1,0 +1,46 @@
+.nonSpcBrowserWrpper{
+  height: 100%;
+  position: relative;
+  width: 100%;
+  user-select: none;
+  &>.content{
+    height: 270px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    &>.title{
+      font-size: 14px;
+      height: 14px;
+      line-height: 14px;
+      color: #666;
+      &>span{
+        font-weight: bold;
+      }
+    }
+    &>img{
+      width:130px;
+      height: 130px;
+      margin: 55px auto 0 auto;
+    }
+    &>.download{
+      margin-top: 24px;
+      color:#233040;
+      &>span{
+        display: inline-block;
+        vertical-align: top;
+        background: #ddd;
+        padding: 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover{
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}

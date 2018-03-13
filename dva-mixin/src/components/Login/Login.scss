@@ -1,0 +1,311 @@
+.loginWarpper{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 1366px;
+  overflow: auto;
+  user-select: none;
+  &>.browserTips{
+    height: 0px;
+    line-height: 0px;
+    text-align: center;
+    color: #df713e;
+    font-size: 18px;
+    position: relative;
+    transition: all 0.6s;
+    &.closeTips{
+      flex: 0 0 120px;
+      height: 120px;
+      line-height: 120px;
+      >.close{
+        top: 45px;
+      }
+    }
+    &>.ring{
+      display: inline-block;
+      vertical-align: middle;
+      width: 40px;
+      height: 35px;
+      background: url(./img/loginRing.png);
+      margin-top: -5px;
+      margin-right: 15px;
+    }
+    &>span {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    &>.close{
+      position: absolute;
+      width: 29px;
+      height: 29px;
+      top: 0;
+      right: 20px;
+      cursor: pointer;
+      background: url(./img/loginClose.png) no-repeat;
+      transition: all 0.6s;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+  &>.loginBody{
+    background: url(./img/loginBackImg.png) repeat;
+    background-size:100%;
+    flex: 1;
+    position: relative;
+    min-height: 588px;
+    &>.bodyCover{
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      background: rgba(255,255,255, 0.75);
+      &>.coverIcoContent{
+        width: 963px;
+        height: 100px;
+        margin:auto;
+        &>i{
+          display: inline-block;
+          vertical-align: top;
+          width: 268px;
+          height: 100px;
+          background: url(./img/companyIco.png);
+        }
+      }
+    }
+    &>.bodyContent{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100px;
+      bottom: 0;
+      margin: auto;
+      width:960px;
+      height: 421px;
+      &>div{
+        display: inline-block;
+        vertical-align: top;
+      }
+      &>.introduce{
+        width: 523px;
+        height: 376px;
+        background: url(./img/intraduce.png) -4px 53px;
+        margin-right: 116px;
+      }
+      &>.bodyInput{
+        width: 320px;
+        background: #fff;
+        position: relative;
+        &>.spinning{
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          z-index: 5;
+          justify-content: center;
+          align-items: center;
+          display: none;
+          &.on{
+            display: flex;
+          }
+        }
+        &>.inputTitle{
+          margin-top: 35px;
+          margin-bottom: 16px;
+          font-size: 22px;
+          color: #434c58;
+          text-align: center;
+          height: 22px;
+          line-height: 22px;
+        }
+        @keyframes errStyle{
+          from{left: 5px;}
+          to {left:-5px;}
+        }
+        .errorWord{
+          display: none;
+          width: 266px;
+          margin: 0 auto;
+          height: 32px;
+          line-height: 30px;
+          background: #fef2f2;
+          border: 1px solid #ffb4a8;
+          border-radius: 4px;
+          color: #ff4300;
+          position: relative;
+          &.err{
+            display: block;
+            animation: errStyle 0.1s linear 0s 1 alternate;
+          }
+          &>i{
+            display: inline-block;
+            vertical-align: top;
+            width: 16px;
+            height: 16px;
+            margin: 7px 10px 0 8px;
+            background: url(./img/errWarm.png) no-repeat;
+          }
+        }
+        .appDownLoad{
+          width: 250px;
+          margin: 0 auto;
+          font-size: 0;
+          white-space: nowrap;
+          padding-top: 48px;
+          margin-bottom: 36px;
+          &>div{
+            display: inline-block;
+            vertical-align: top;
+            &:last-child{
+              margin-left: 30px;
+            }
+            &>img{
+              width:110px;
+              height: 110px;
+            }
+            &>p{
+              font-size: 14px;
+              height: 14px;
+              line-height: 14px;
+              margin-top: 18px;
+              text-align: center;
+            }
+          }
+        }
+        .inputField{
+          width: 266px;
+          margin: 0 auto;
+          padding-top: 16px;
+          &>p{
+            height: 38px;
+            color:#343535;
+            &>input{
+              width:100%;
+              height: 38px;
+              line-height: 38px;
+              border-radius: 4px;
+              border:1px solid #cbd7e6;
+              outline: none;
+              padding: 0 12px;
+            }
+            &:last-child{
+              margin-top: 20px;
+            }
+          }
+        }
+        .loginOption{
+          padding: 20px 0 26px 0;
+          width: 266px;
+          margin: 0 auto;
+          &>p{
+            display: inline-block;
+            vertical-align: top;
+            font-size: 0;
+            line-height: 14px;
+            &:last-child{
+              float: right;
+              color:#df713e;
+              font-size: 14px;
+              cursor: pointer;
+            }
+            &>i,&>span{
+              display: inline-block;
+              vertical-align: top;
+              cursor: pointer;
+            }
+            &>i{
+              width:15px;
+              height: 15px;
+              border:1px solid #cbd7e6;
+              &.on{
+                background: url(./img/autoLogin.png) no-repeat;
+                background-position-y: 2px;
+              }
+            }
+            &>span{
+              color: #616872;
+              font-size: 14px;
+              margin-left: 7px;
+            }
+          }
+        }
+        .loginBtn{
+          color: #fff;
+          text-align: center;
+          width: 266px;
+          margin: 0 auto;
+          background: #ff6000;
+          border-radius: 4px;
+          padding: 12px 0;
+          cursor: pointer;
+          &:hover{
+            opacity: 0.8;
+          }
+        }
+        &>.switchDownLoad{
+          width: 296px;
+          margin: 12px auto 12px auto;
+          height: 80px;
+          &>span{
+            float: right;
+          }
+          &>.prompt{
+            font-size: 12px;
+            width: 180px;
+            height: 20px;
+            box-sizing: border-box;
+            line-height: 18px;
+            text-align: center;
+            color: #df9c20;
+            background: #fefcee;
+            border:1px solid #f3d994;
+            margin-top: 29px;
+            margin-right: -22px;
+            position: relative;
+            &>i{
+              position: absolute;
+              top: 0;
+              right: 0;
+              width:5px;
+              height: 5px;
+              background: #fefcee;
+              border:1px solid;
+              border-color:#f3d994 #f3d994 #fefcee #fefcee;
+              transform: rotate(45deg);
+              top: 6px;
+              right: -3px;
+            }
+          }
+          &>.promptIco{
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            &.dqcode{
+              background: url(./img/dqcode.png) no-repeat;
+            }
+            &.computer{
+              background: url(./img/computer.png) no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+  &>.loginFoot{
+    height:50px;
+    font-size: 12px;
+    color: #999;
+    line-height: 50px;
+    text-align: center;
+    background: #eff2f5;
+    >i{
+      display: inline-block;
+      vertical-align: middle;
+      background: #999;
+      width:1px;
+      height: 16px;
+      margin: -1px 10px 0 10px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "apps": [
+    {
+      "name": "16001-dva-cd-test",
+      "cwd": "./",
+      "max_memory_restart": "300M",
+      "script": "npm",
+      "args": "start",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": 16001
+      }
+    }
+  ]
+}

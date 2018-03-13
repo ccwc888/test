@@ -1,0 +1,18 @@
+.pagination-container {
+  text-align: right;
+  margin-bottom: 10px;
+
+  &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+  .ant-pagination {
+    display:inline-block;
+    vertical-align: middle;
+  }
+}
+
+.ant-pagination {
+  margin-right: 10px !important;
+}

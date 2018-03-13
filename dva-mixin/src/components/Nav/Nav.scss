@@ -1,0 +1,123 @@
+@import '../../globalVar.scss';
+.normal {
+  // 箭头
+  :global(.ant-menu-submenu-inline)>:global(.ant-menu-submenu-title:after){
+    content:"\E604";
+    font-size: 12px;
+    transform: rotate(90deg) scale(0.65);
+  }
+  :global(.ant-menu-submenu-open.ant-menu-submenu-inline)>:global(.ant-menu-submenu-title:after){
+    transform: rotate(-90deg) scale(0.65);
+  }
+  :global(.ant-menu-item-group-title) {
+    white-space: nowrap;
+  }
+  // 菜单项
+  :global(.ant-menu-root){
+    &>li{
+        :global(.ant-menu-item){
+          & > a{
+            color: rgba(255, 255, 255, 0.4);
+          }
+        &-selected{
+          & > a{
+            color: rgba(241, 129, 1, 1);
+            &:hover{
+              color: rgba(241, 129, 1, 1) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  :global{
+    .ant-menu-submenu-selected >div >span >svg{
+      color: rgba(241, 129, 1, 1);
+    }
+  }
+  :global(.ant-menu){
+    overflow: hidden;
+    &.ant-menu-root >li{
+      & > a:hover{
+        color: #fff !important;
+      }
+    }
+  }
+  :global(.ant-menu-root > .ant-menu-item){
+    & > a{
+      color: #fff;
+    }
+    &-selected{
+      & > a{
+        color: #fff;
+      }
+    }
+  }
+
+  // 菜单文字缩进
+  $indent: 53px;
+  :global(.ant-menu-item),
+  :global(.ant-menu-submenu-title){
+    padding-left: $indent !important;
+  }
+  :global(.ant-menu-sub) :global(.ant-menu-item){
+    padding-left: $indent - 1 !important;
+  }
+  // 菜单选中状态
+  :global(.ant-menu-item-selected){
+    background-color: rgba(241, 129, 0, 0.0980392156862745) !important;
+    // ribbon
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      // left: 0;
+      right: 0;
+      width: 3px;
+      height: 100%;
+      background-color: $globalThemeColor;
+    }
+  }
+
+  :global(.ant-menu-dark){
+    background-color: transparent;
+    :global(.ant-menu-inline.ant-menu-sub){
+      background-color: transparent;
+    }
+  }
+
+  :global(.ant-menu-submenu-title){
+    font-size: 14px !important;
+    color: #fff;
+    height: 48px !important;
+    line-height: 48px !important;
+  }
+
+  :global(.ant-menu-item), :global(.ant-menu-sub.ant-menu-inline > .ant-menu-item){
+    height: 48px;
+    line-height: 48px;
+    font-size: 14px;
+  }
+
+  // 鼠标悬停样式
+  :global(.ant-menu-item-active){
+    background-color: rgba(241, 129, 0, 0.0980392) !important;
+    & > a{
+      color: #fff !important;
+    }
+  }
+}
+
+:global(.ant-layout-sider-collapsed) {
+  .normal{
+    :global(.ant-menu-item-group-title) {
+      opacity: 0;
+    }
+    :global(.ant-menu-submenu-title) {
+      >span>span {
+        display: none;
+      }
+    }
+  }
+}

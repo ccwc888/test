@@ -1,0 +1,166 @@
+
+.wapper{
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  // 1366 - 17
+  min-width: 1349px;
+  // 768 - 40 - 90
+  min-height: 635px;
+}
+// 左侧导航栏
+.slider {
+  $sliderTriggerHeight: 30px;
+  overflow: hidden;
+  background-color: #272727;
+
+  :global(.ant-layout-sider-trigger) {
+      background: transparent;
+      bottom: auto;
+      // top: 0;
+      height: $sliderTriggerHeight;
+      line-height: $sliderTriggerHeight;
+      top: $logoHeight;
+      display: none;
+  }
+
+  // 导航调整
+  .nav{
+    margin-top: $sliderTriggerHeight;
+  }
+
+  // 导航配置文件
+  .navIcon{
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    font-size: 16px;
+  }
+
+  // 图标配置
+  :global(.ant-menu-item-selected){
+    $highLight: rgba(241, 129, 1, 1);
+    $white: #fff;
+    .icon{
+      &Gl,
+      &Gjcx1,
+      &Gjsz,
+      &Ssdt1,
+      &Dlfx1,
+      &Mmxg1,
+      &Zdgl,
+      &Lxwm1,
+      &Active{
+        color: $highLight;
+      }
+      &Gl1,
+      &Gjcx,
+      &Gjsz1,
+      &Ssdt,
+      &Dlfx,
+      &Mmxg,
+      &Zdgl1,
+      &Lxwm,
+      &Default{
+        color: $white;
+      }
+    }
+  }
+}
+
+// 右侧内容区
+.section{
+  $contentHeaderHeight: 50px !default;
+  .header{
+    padding: 0 30px 0 20px;
+    // box-shadow: 0 1px 0 #ddd;
+    background-color: #fff;
+    height: $contentHeaderHeight;
+    line-height: $contentHeaderHeight;
+
+    .avator{
+
+    }
+    .fullHeight{
+      height: 100%;
+    }
+    .right{
+      height: $contentHeaderHeight;
+      >div{
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+
+    .item{
+      &:hover{
+        background-color: #eee;
+      }
+    }
+    .spliter{
+      // margin-left: 15px;
+      height: 100%;
+      width: 1px;
+      // height: 60px;
+      // margin: auto 0;
+      background-color: #eee;
+    }
+  }
+
+  .content{
+    overflow: auto;
+    margin-top: 1px;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+  }
+
+}
+
+.stationSelector{
+  :global(.ant-select-dropdown-menu-item){
+    font-size: 14px;
+    line-height: 18px;
+    height: 30px;
+    padding: 0px 8px;
+    // transition: none;
+    // &:hover{
+    //   color: #fff;
+    //   background-color: #1e90ff;
+    // }
+  }
+  :global(.ant-select-dropdown-menu){
+    padding: 5px 0;
+  }
+}
+
+.sysUpDateTitle{
+    color:#999;
+  }
+  .sysUpDateDec{
+    color:#65afe9;
+    &>p{
+      margin: 5px 0;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+:global{
+  .ant-notification{
+    width: inherit;
+  }
+}
+
+
+.alarmpop{
+  position: fixed;
+  bottom: 30px;
+  right: -380px;
+  z-index: 1001;
+  &.show{
+    right: 16px;
+  }
+}

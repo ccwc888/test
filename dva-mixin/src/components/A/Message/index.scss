@@ -1,0 +1,175 @@
+.messageWarpper{
+  color: green;
+}
+
+:local(.message) {
+  // font-size: @font-size-base;
+  position: fixed;
+  z-index: 1010; // @zindex-message;
+  // width: 300px + 8 * 2;
+  height: 160px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  
+  pointer-events: none;
+  
+
+  &-notice {
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 300px;
+    margin: 0px auto 10px;
+    &:not(:last-child){
+      display: none !important;
+    }
+    &:first-child {
+      margin-top: -8px;
+    }
+  }
+
+  &-notice-content {
+    height: 100%;
+    // width: 100%;
+    padding: 0;
+    // border-radius: @border-radius-base;
+    // box-shadow: @shadow-2;
+    // background: @component-background;
+    // display: inline-block;
+    pointer-events: all;
+    background: rgba(0, 0, 0, 0.8);
+    color:#fff;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+
+  &-success .icon > i {
+    // color: @success-color;
+    background: #1ae98f;
+    color: #0d7447;
+  }
+
+  &-error .icon > i {
+    // color: @error-color;
+    background: #ff5f5f;
+    color: #993535;
+  }
+
+  &-warning .icon > i {
+    // color:  @warning-color;
+    color: #7f6b0b;
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  &-info .icon > i {
+    // color: @info-color;
+    background: #47ccff;
+    color: #2c7c99;
+  }
+
+  &-custom-content{
+    position: relative;
+    height: 100%;
+    padding: 40px;
+  }
+
+  .icon {
+    // position: absolute;
+    // top: 55px;
+    // left: 80px;
+
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    >i{
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: auto 0;
+      text-align: center;
+      line-height: 47px;
+      font-size: 28px;
+    }
+    // margin-right: 8px;
+    // // font-size: @font-size-lg;
+    // top: 1px;
+    // position: relative;
+    
+  }
+  .content{
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+    top: 50%;
+    vertical-align: top;
+    transform: translate(0, -50%);
+    text-align: left;
+    max-width: 220px - 50 - 20;
+  }
+
+  &-notice-close{
+    position: absolute;
+    right:5px;
+    top:5px;
+    width:30px;
+    height: 30px;
+    cursor: pointer;
+    pointer-events: all;
+    &:before, &:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      display: block;
+      height: 2px;
+      width: 20px;
+      background: #888;
+    }
+    &:before{
+      transform: rotate(45deg);
+    }
+    &:after{
+      transform: rotate(-45deg);
+    }
+    &:hover{
+      &:before, &:after{
+        background: #ccc;
+      }
+    }
+    &:active{
+      &:before, &:after{
+        background: #999;
+      }
+    }
+  }
+
+  &-notice.move-up-leave.move-up-leave-active {
+    animation-name: MessageMoveOut;
+    overflow: hidden;
+    animation-duration: .3s;
+  }
+}
+
+@keyframes MessageMoveOut {
+  0% {
+    opacity: 1;
+    max-height: 150px;
+    padding: 8px;
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+  }
+}

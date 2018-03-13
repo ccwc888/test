@@ -1,0 +1,186 @@
+
+// $primary-color: #f08300;
+// $default-color: #e5e5e5;
+
+.btnStyle{
+    display: inline-block;
+    // background-color: $primary-color;
+    // border-color: $primary-color;
+    border-radius: 2px;
+    :global(.ant-btn){
+        height: 32px;
+        min-width: 100px;
+        border-radius: 2px;
+        line-height: 1;
+        padding: 0;
+        color: #666;
+        background-color:#fff;
+        border-color: #e5e5e5;
+        transition: none;
+        &:hover{
+            background-color: #f5f5f5;
+        }
+        &:active{
+            color: #333;        
+        }
+        &[disabled],&[disabled]:hover{
+            background-color:#fff;        
+            color:#ccc;
+            border-color: #e5e5e5;
+        }
+    }
+    :global{
+        .ant-btn-lg{
+            font-size: 14px;
+        }
+    }
+    :global(.ant-btn-sm){
+        height: 26px;
+        min-width: 60px;
+        font-size: 12px;
+    }
+    :global(.ant-btn-primary){
+        color: #fff;        
+        background-color: $primary-color;
+        border-color: transparent;
+        // hover直接用色值的原因是：不知道ps中“效果：叠加”的颜色计算方法，disabled和pressed是颜色覆盖
+        &:hover{
+            background-color: #ed6801;
+        }
+        &:active{
+            color: #fff;                
+            background-color: #d87402;            
+        }
+        &[disabled],&[disabled]:hover{
+            background-color: #f7c080;
+            color:#fff;
+            border-color: transparent;
+        }
+    }
+    .pd20{
+        padding: 0 20px;
+    }
+    //
+    :global(.ant-btn-clicked):after{
+        display: none !important;
+    }
+}
+.iconBtnStyle{
+  background-color: transparent;
+  border-color: transparent;
+    :global(.ant-btn){
+        min-width: 30px;
+        height: 30px;
+        border: none;
+        // 字体图标样式
+        .iconStyle{
+            font-size: 16px;
+            width: 30px;
+            display: inline-block;
+            color: #888;
+            vertical-align: middle;
+        }
+        // 字体图标文字样式
+        .textStyle{
+            color: #666;
+        }
+        .pdrt10{
+            padding-right: 10px;
+        }
+    }
+    :global(.ant-btn:hover){
+      background-color: #eee;
+      .iconStyle{
+        color: #888;
+      }
+    }
+    :global(.ant-btn:active){
+      background-color: #eee;
+      .iconStyle{
+        color: #333;
+      }
+      .textStyle{
+          color: #333;
+      }
+    }
+    :global(.ant-btn:disabled){
+      background-color: transparent;        
+      .iconStyle{
+        color: #ccc;
+      }
+      .textStyle{
+          padding-right: 10px;
+          color: #ccc;
+      }
+    }
+}
+.linkBtnStyle{
+    background-color: transparent;
+    border-color: transparent;
+    :global(.ant-btn){
+        border: none;
+        min-width: 0;
+        height: 14px;
+        background-color: transparent;    
+        .textStyle{
+            color: #6e90ff;            
+        }
+        .textStyle_danger{
+            color: #ff5151;
+        }
+        &:hover{
+            background-color: transparent;
+            .textStyle{
+                color: #587aff;
+                text-decoration: underline;                
+            }
+            .textStyle_danger{
+                color: #ff2e2e;
+                text-decoration: underline;
+            }
+        }
+        &:active{
+            .textStyle{
+                color: #6381e5;
+                text-decoration: underline;                
+            }
+            .textStyle_danger{
+                color: #ff3a3a;
+                text-decoration: underline;
+            }
+        }
+        &:disabled{
+            background-color: transparent;
+            .textStyle{
+                color: #c5d3ff; 
+                text-decoration: none;
+            }
+            .textStyle_danger{
+                color: #ffa8a8;
+                text-decoration: none;                
+            }
+        }
+    }
+}
+.ghostBtnStyle{
+    background-color: #fff;
+    border-color: transparent;
+    :global(.ant-btn-primary){
+        color: $primary-color;
+        background-color: transparent;
+        border-color: $primary-color;
+        &:hover{
+            color: #ed6801;
+            border-color: #ed6801;
+        }
+        &:active{
+            color: #d87402;
+            border-color: #d87402;            
+        }
+        &:disabled,&[disabled]:hover{
+            color: #f7c080;
+            border-color: #f7c080;            
+        }
+    }
+
+}
